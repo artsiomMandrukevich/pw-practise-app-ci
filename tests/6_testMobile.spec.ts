@@ -2,9 +2,7 @@ import {test, expect} from '@playwright/test'
 
 
 test('input fields', async({page}, testInfo) => {
-
     // npx playwright test --project=mobile --headed
-
     await page.goto("http://localhost:4200/pages/iot-dashboard", {waitUntil: "networkidle"});
     if(testInfo.project.name == 'mobile') {
         await page.locator('a[class="sidebar-toggle"]').click();
@@ -18,6 +16,4 @@ test('input fields', async({page}, testInfo) => {
     await usingTheGridEmailInput.fill('test@test.com');
     await usingTheGridEmailInput.clear();
     await usingTheGridEmailInput.pressSequentially('test2@test.com');
-
-
 })
